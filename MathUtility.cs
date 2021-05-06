@@ -6,7 +6,6 @@ using System;
 public static class MathUtility 
 {
     public static System.Random Rnd = new System.Random();
-    private static int a;
     public static (float Z1, float Z2) BoxMuller(float ave = 0f, float sigma =1f) {
         double X = Rnd.NextDouble();
         double Y = Rnd.NextDouble();

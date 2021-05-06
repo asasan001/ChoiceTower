@@ -6,7 +6,7 @@ public class ItemManager
 {
     public PlayerStatus playerStatus;
 
-    //アイテム9個
+    //アイテム6個
     private Dictionary<ItemType, ItemBase> items;
 
     public bool CanUseInfinitePower;
@@ -46,7 +46,7 @@ public class ItemManager
         }
     }
 
-    public (ItemBase right, ItemBase left) PickUpTwoItems() {//確率による計算　あとで直す
+    public (ItemBase right, ItemBase left) PickUpTwoItems() {//確率による計算
         int r1 = MathUtility.Rnd.Next(0, items.Count);
         int r2 = MathUtility.Rnd.Next(0, items.Count-1);
         if (r2 >= r1) {

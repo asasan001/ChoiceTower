@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using UniRx;
 using System;
 
-public class BattlePhase
+public class BattlePhase :IPhase
 {
 
     private IUserInterface userInterface;

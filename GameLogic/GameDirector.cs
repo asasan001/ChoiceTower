@@ -13,9 +13,9 @@ public class GameDirector : MonoBehaviour
     private List<int> stages; //0: battle, 1: item store
     private bool canUpdate = true;
 
-    [SerializeField]private IUserInterface userInterface;
-    private BattlePhase battlePhase;
-    private ItemStorePhase itemStorePhase;
+    [SerializeField] private IUserInterface userInterface;
+    private IPhase battlePhase;
+    private IPhase itemStorePhase;
     private ItemManager itemManager;
     private PlayerStatus playerStatus;
 
@@ -93,6 +93,7 @@ public class GameDirector : MonoBehaviour
     }
     private void Setup()
     {
+        userInterface = GameObject.Find("UserInterface").GetComponent<IUserInterface>();
         battlePhase = new BattlePhase();
         itemStorePhase = new ItemStorePhase();
         itemManager = new ItemManager();
