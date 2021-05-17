@@ -18,6 +18,8 @@ public class BattlePhase :IPhase
     {
         //モンスターの生成
         var monsters = MonsterGenerator.GenerateTwoMonster(currentStage + 1);
+
+        //モンスターと戦った時のシミュレーション
         var rightSim = BattleSystem.Simulate(playerStatus, monsters.right);
         var leftSim = BattleSystem.Simulate(playerStatus, monsters.left);
 
@@ -31,7 +33,7 @@ public class BattlePhase :IPhase
         {
             var input = await userInterface.WaitInputAsync();
 
-            if (input.category == 0)//アイテムを取得
+            if (input.category == 0)//モンスターとのバトル
             {
                 
                 if (input.pickedThing == 0)

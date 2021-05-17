@@ -20,7 +20,6 @@ public class PlayerStatus
     }
     public int Level { get; private set; }
     public int Exp { get; private set; }
-    public int NaturalHeal { get; set; }//これを消す
     public int Attack { get; set; }
     public int Defense { get; set; }
 
@@ -70,7 +69,7 @@ public class PlayerStatus
         int basicPoint = 30;
         int basicCoef = 2;
         Attack = (int)(basicPoint +
-            (basicCoef + CumulativeMonsterAttack *(Level - 1)));
+            (basicCoef + CumulativeMonsterAttack) *(Level - 1));
         Defense = (int)(basicPoint +
             (basicCoef + CumulativeMonsterDefense) * (Level - 1));
     }
